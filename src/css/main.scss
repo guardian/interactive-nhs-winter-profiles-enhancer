@@ -1,0 +1,155 @@
+@import "fonts";
+@import "palette";
+@import "mq";
+@import "share";
+
+//styles to override text
+
+figure.interactive {
+	display: none;
+}
+
+.gv-name, .gv-title {
+	@include fs-headline(5);
+	font-weight: 200;
+	color: #333333;
+}
+
+.gv-title {
+	margin-top: 20px;
+	padding-top: 10px;
+	position: relative;
+}
+
+.gv-title-large {
+	@include fs-headline(6);
+	margin-top: 20px;
+}
+
+.gv-title::before {
+		position: absolute;
+		top: 0;
+		left: 0;
+		content: " ";
+		height: 1px;
+		width: 140px;
+		background: #484f53;
+	}
+
+.gv-name {
+	color: #69d1ca;
+}
+
+.block-share--article {
+	display: none !important;
+}
+
+.content--article .fig--narrow-caption figcaption {
+    max-width: 100% !important;
+}
+
+.svg .caption--img:before {
+	display: none;
+}
+
+blockquote.quoted {
+	margin-bottom: 10px;
+}
+
+blockquote.quoted .inline-quote {
+	fill: #eaeaea;
+}
+
+.article__fullscreen {
+	display: none;
+}
+
+
+.from-content-api blockquote {
+	font-style: normal;
+	color: #333333;
+	
+	p {
+		font-size: 18px;
+		line-height: 22px;
+	}
+
+	.quoted__contents {
+		margin-top: 25px;
+		margin-left: 0 !important;
+	}
+}
+
+@media screen and (min-width: breakpoint('tablet')) {
+
+
+
+	.from-content-api blockquote {
+		p {
+			max-width: 66%;
+		}
+	}
+}
+
+@media screen and (min-width: breakpoint('desktop')) {
+	.gv-name, .gv-title {
+		@include fs-headline(6);
+		font-weight: 200;
+	}
+
+	.gv-title {
+		margin-top: 60px;
+	}
+
+	.gv-title-larger{
+		@include fs-headline(8);
+		margin-top: 30px;
+	}
+
+
+	blockquote.quoted .inline-quote {
+		left: -70px;
+		
+
+		svg {
+			width: 60px;
+			height: 45px;
+		}
+	}
+
+	.from-content-api blockquote {
+		.quoted__contents {
+			margin-top: 0;
+		}
+	}
+
+	.quoted__contents {
+		margin-left: 0 !important;
+	}
+
+	.caption--img {
+		padding-bottom: 10px;
+	}
+}
+
+@media screen and (min-width: breakpoint('leftCol')) {
+	.gv-name, .gv-title {
+		@include fs-headline(7);
+		font-weight: 200;
+	}
+
+	.gv-title-large {
+		@include fs-headline(9);
+		margin-top: 40px;
+	}
+
+
+}
+
+
+
+//app hacks
+
+.prose blockquote.quoted {
+	margin: 20px 0 0 0;
+}
